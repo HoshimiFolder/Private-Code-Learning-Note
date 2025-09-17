@@ -1,228 +1,228 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-//×Ö·û´®
+//å­—ç¬¦ä¸²
 //int main()
 //{
-//	//char ×Ö·ûÀàÐÍ£ºÃèÊö×Ö·û
-//	//¡®a¡¯£º×Ö·û³£Á¿
-//	//char ch = 'w';//ÓÃchar½«×Ö·û³£Á¿'w'¸³Öµ¸ø±äÁ¿ch
-//	//×Ö·û´®£ºË«ÒýºÅÄÚµÄ¶«Î÷
-//	//"abcdefg";//×Ö·û´®³£Á¿
-//	//CÓïÑÔÖÐÃ»ÓÐ×Ö·û´®ÀàÐÍ£¬ÃèÊö×Ö·û´®ÓÃ""ÒýÆðÒ»´®×Ö·û£¬³ÉÎª×Ö·û´®×ÖÃæÖµ£¨×Ö·û´®£©
-//	//char arr[10] = "abcdef";//¶¨ÒåÒ»¸ö×Ö·ûÊý×éarr£¬³¤¶ÈÎª10(·Å10¸ö×Ö·û£©
-//	char arr1[] = "abcdef";//²»ÊäÈëÊý×ÖÊ±»á×Ô¶¯¼ÆËã³¤¶È,\0Îª×Ö·û´®½áÊø·û£¬²»ÊäÈëÔòÄ¬ÈÏÌí¼Óµ½Ä©Î²
-//	//char arr[]="abcdef\0";//ÊÖ¶¯Ìí¼Ó×Ö·û´®½áÊø·û
-//	char arr2[] = { 'a','b','c','d','e','f' };//¶¨ÒåÒ»¸ö×Ö·ûÊý×éarr2£¬ÊÖ¶¯ÊäÈëÃ¿¸ö×Ö·û,ÕâÀï¾ÍÃ»ÓÐ\0
+//	//char å­—ç¬¦ç±»åž‹ï¼šæè¿°å­—ç¬¦
+//	//â€˜aâ€™ï¼šå­—ç¬¦å¸¸é‡
+//	//char ch = 'w';//ç”¨charå°†å­—ç¬¦å¸¸é‡'w'èµ‹å€¼ç»™å˜é‡ch
+//	//å­—ç¬¦ä¸²ï¼šåŒå¼•å·å†…çš„ä¸œè¥¿
+//	//"abcdefg";//å­—ç¬¦ä¸²å¸¸é‡
+//	//Cè¯­è¨€ä¸­æ²¡æœ‰å­—ç¬¦ä¸²ç±»åž‹ï¼Œæè¿°å­—ç¬¦ä¸²ç”¨""å¼•èµ·ä¸€ä¸²å­—ç¬¦ï¼Œæˆä¸ºå­—ç¬¦ä¸²å­—é¢å€¼ï¼ˆå­—ç¬¦ä¸²ï¼‰
+//	//char arr[10] = "abcdef";//å®šä¹‰ä¸€ä¸ªå­—ç¬¦æ•°ç»„arrï¼Œé•¿åº¦ä¸º10(æ”¾10ä¸ªå­—ç¬¦ï¼‰
+//	char arr1[] = "abcdef";//ä¸è¾“å…¥æ•°å­—æ—¶ä¼šè‡ªåŠ¨è®¡ç®—é•¿åº¦,\0ä¸ºå­—ç¬¦ä¸²ç»“æŸç¬¦ï¼Œä¸è¾“å…¥åˆ™é»˜è®¤æ·»åŠ åˆ°æœ«å°¾
+//	//char arr[]="abcdef\0";//æ‰‹åŠ¨æ·»åŠ å­—ç¬¦ä¸²ç»“æŸç¬¦
+//	char arr2[] = { 'a','b','c','d','e','f' };//å®šä¹‰ä¸€ä¸ªå­—ç¬¦æ•°ç»„arr2ï¼Œæ‰‹åŠ¨è¾“å…¥æ¯ä¸ªå­—ç¬¦,è¿™é‡Œå°±æ²¡æœ‰\0
 //	char arr3[] = { 'a','b','c','d','e','f','\0'};
-//	printf("%s\n", arr1);//arr1ÄÚ´æ²¼¾Ö£ºa b c d e f \0£¬arr1·ÖÅäÔÚÁËÄÚ´æµÄÆäÖÐÒ»²¿·Ö¿Õ¼ä
-//	//printf´òÓ¡arr1Ê±£¬µ½\0ÎªÖ¹£¬\0²»´òÓ¡
-//	printf("%s\n", arr2);//arr2ÄÚ´æ²¼¾Ö£ºa b c d e f
-//	//printf´òÓ¡arr2Ê±£¬Óöµ½\0¾ÍÍ£Ö¹´òÓ¡£¬µ«arr2Ã»ÓÐ\0£¬ËùÒÔ»á¼ÌÐø´òÓ¡ºóÃæµÄÄÚÈÝ£¬¿ÉÄÜÊÇÂÒÂë£¬Ö±µ½Óöµ½ÄÚ´æºóÃæµÄ\0ÎªÖ¹
-//	printf("%s\n", arr3);//arr3ÖÐÓÐ\0,´òÓ¡µ½\0ÎªÖ¹£¬Êä³ö½á¹ûÓëarr1Ò»ÖÂ
-//	strlen(arr1);//strlenº¯ÊýÓÃÓÚ¼ÆËã×Ö·û´®³¤¶È£¬²»°üÀ¨\0
-//	int len = strlen(arr1);//¼ÆËãarr1µÄ³¤¶È²¢´´½¨Ò»¸öintÀàÐÍµÄ±äÁ¿len´æ´¢³¤¶È£¨ÕûÐÎlen½ÓÊÜº¯Êý·µ»ØÖµ£©
-//	printf("%d\n", len);//Êä³öarr1µÄ³¤¶È6(²»°üÀ¨\0£©
-//	int len1 = strlen("HoshimiFolder");//ºóÃæÄ¬ÈÏ¼ÓÈë½áÊø±êÖ¾\0
-//	printf("%d\n", len1);//Êä³ö"HoshimiFolder"µÄ³¤¶È13
-//	printf("%d\n", strlen(arr1));//Ö±½Ó¼ÆËãarr1µÄ³¤¶È²¢Êä³ö6
+//	printf("%s\n", arr1);//arr1å†…å­˜å¸ƒå±€ï¼ša b c d e f \0ï¼Œarr1åˆ†é…åœ¨äº†å†…å­˜çš„å…¶ä¸­ä¸€éƒ¨åˆ†ç©ºé—´
+//	//printfæ‰“å°arr1æ—¶ï¼Œåˆ°\0ä¸ºæ­¢ï¼Œ\0ä¸æ‰“å°
+//	printf("%s\n", arr2);//arr2å†…å­˜å¸ƒå±€ï¼ša b c d e f
+//	//printfæ‰“å°arr2æ—¶ï¼Œé‡åˆ°\0å°±åœæ­¢æ‰“å°ï¼Œä½†arr2æ²¡æœ‰\0ï¼Œæ‰€ä»¥ä¼šç»§ç»­æ‰“å°åŽé¢çš„å†…å®¹ï¼Œå¯èƒ½æ˜¯ä¹±ç ï¼Œç›´åˆ°é‡åˆ°å†…å­˜åŽé¢çš„\0ä¸ºæ­¢
+//	printf("%s\n", arr3);//arr3ä¸­æœ‰\0,æ‰“å°åˆ°\0ä¸ºæ­¢ï¼Œè¾“å‡ºç»“æžœä¸Žarr1ä¸€è‡´
+//	strlen(arr1);//strlenå‡½æ•°ç”¨äºŽè®¡ç®—å­—ç¬¦ä¸²é•¿åº¦ï¼Œä¸åŒ…æ‹¬\0
+//	int len = strlen(arr1);//è®¡ç®—arr1çš„é•¿åº¦å¹¶åˆ›å»ºä¸€ä¸ªintç±»åž‹çš„å˜é‡lenå­˜å‚¨é•¿åº¦ï¼ˆæ•´å½¢lenæŽ¥å—å‡½æ•°è¿”å›žå€¼ï¼‰
+//	printf("%d\n", len);//è¾“å‡ºarr1çš„é•¿åº¦6(ä¸åŒ…æ‹¬\0ï¼‰
+//	int len1 = strlen("HoshimiFolder");//åŽé¢é»˜è®¤åŠ å…¥ç»“æŸæ ‡å¿—\0
+//	printf("%d\n", len1);//è¾“å‡º"HoshimiFolder"çš„é•¿åº¦13
+//	printf("%d\n", strlen(arr1));//ç›´æŽ¥è®¡ç®—arr1çš„é•¿åº¦å¹¶è¾“å‡º6
 //	return 0;
 //}
-// \0±¾ÖÊÉÏÊÇ×ªÒå×Ö·û
-//×ªÒå×Ö·û£º×ª±ä×Ö·ûµÄÒâË¼
+// \0æœ¬è´¨ä¸Šæ˜¯è½¬ä¹‰å­—ç¬¦
+//è½¬ä¹‰å­—ç¬¦ï¼šè½¬å˜å­—ç¬¦çš„æ„æ€
 //int main()
 //{
-//	printf("abcn");//´òÓ¡×Ö·û´®abcn
-//	printf("abc\n");//\nÊÇ×ªÒå×Ö·û£¬±íÊ¾»»ÐÐ£¨½«nµÄÒâË¼×ª±äÎª»»ÐÐ£©
+//	printf("abcn");//æ‰“å°å­—ç¬¦ä¸²abcn
+//	printf("abc\n");//\næ˜¯è½¬ä¹‰å­—ç¬¦ï¼Œè¡¨ç¤ºæ¢è¡Œï¼ˆå°†nçš„æ„æ€è½¬å˜ä¸ºæ¢è¡Œï¼‰
 //	printf("HoshimiFolder");
 //	return 0;
 //}
 //int main()
 //{
-//	printf("abc\0def");//Óöµ½\0¾ÍÍ£Ö¹´òÓ¡£¬\0Îª×ªÒå×Ö·û£¬±íÊ¾×Ö·û´®½áÊø£¬ËùÒÔÖ»´òÓ¡abc
+//	printf("abc\0def");//é‡åˆ°\0å°±åœæ­¢æ‰“å°ï¼Œ\0ä¸ºè½¬ä¹‰å­—ç¬¦ï¼Œè¡¨ç¤ºå­—ç¬¦ä¸²ç»“æŸï¼Œæ‰€ä»¥åªæ‰“å°abc
 //	return 0;
 // }
-//×ªÒå×Ö·û£º
-//?  ÔÚÊéÐ´Á¬Ðø¶à¸öÎÊºÃÊ±Ê¹ÓÃ£¬·ÀÖ¹±»½âÎö³É3¸ö×ÖÄ¸´Ê
-//\' ÓÃÓÚ±íÊ¾×Ö·û³£Á¿'
-//\" ÓÃÓÚ±íÊ¾Ò»¸ö×Ö·û´®ÄÚ²¿µÄË«ÒýºÅ
-//\\ ÓÃÓÚ±íÊ¾Ò»¸ö·´Ð±¸Ü£¬·ÀÖ¹±»½âÊÍÎªÒ»¸ö×ªÒåÐòÁÐ·û
-//\a ¾¯¸æ×Ö·û£¬·äÃù
-//\b ÍË¸ñ·û£¬É¾³ýÇ°Ò»¸ö×Ö·û
-//\f »»Ò³·û£¬´òÓ¡»úÓÃ£¨½øÖ½·û£©
-//\n »»ÐÐ
-//\r »Ø³µ·û£¬¹â±ê»Øµ½ÐÐÊ×
-//\t Ë®Æ½ÖÆ±í·û£¬¹â±êÌøµ½ÏÂÒ»¸öÖÆ±íÎ»
-//\v ´¹Ö±ÖÆ±í·û£¬¹â±êÌøµ½ÏÂÒ»¸öÖÆ±íÎ»
-//\0 ¿Õ×Ö·û£¬×Ö·û´®½áÊø·û
-//\ddd ddd±íÊ¾1~3¸ö°Ë½øÖÆµÄÊý×Ö¡£Èç\130 X
-//\xdd dd±íÊ¾2¸ö16½øÖÆÊý×Ö¡£ Èç\x30 0
+//è½¬ä¹‰å­—ç¬¦ï¼š
+//?  åœ¨ä¹¦å†™è¿žç»­å¤šä¸ªé—®å·æ—¶ä½¿ç”¨ï¼Œé˜²æ­¢è¢«è§£æžæˆ3ä¸ªå­—æ¯è¯
+//\' ç”¨äºŽè¡¨ç¤ºå­—ç¬¦å¸¸é‡'
+//\" ç”¨äºŽè¡¨ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²å†…éƒ¨çš„åŒå¼•å·
+//\\ ç”¨äºŽè¡¨ç¤ºä¸€ä¸ªåæ–œæ ï¼Œé˜²æ­¢è¢«è§£é‡Šä¸ºä¸€ä¸ªè½¬ä¹‰åºåˆ—ç¬¦
+//\a è­¦å‘Šå­—ç¬¦ï¼Œèœ‚é¸£
+//\b é€€æ ¼ç¬¦ï¼Œåˆ é™¤å‰ä¸€ä¸ªå­—ç¬¦
+//\f æ¢é¡µç¬¦ï¼Œæ‰“å°æœºç”¨ï¼ˆè¿›çº¸ç¬¦ï¼‰
+//\n æ¢è¡Œ
+//\r å›žè½¦ç¬¦ï¼Œå…‰æ ‡å›žåˆ°è¡Œé¦–
+//\t æ°´å¹³åˆ¶è¡¨ç¬¦ï¼Œå…‰æ ‡è·³åˆ°ä¸‹ä¸€ä¸ªåˆ¶è¡¨ä½
+//\v åž‚ç›´åˆ¶è¡¨ç¬¦ï¼Œå…‰æ ‡è·³åˆ°ä¸‹ä¸€ä¸ªåˆ¶è¡¨ä½
+//\0 ç©ºå­—ç¬¦ï¼Œå­—ç¬¦ä¸²ç»“æŸç¬¦
+//\ddd dddè¡¨ç¤º1~3ä¸ªå…«è¿›åˆ¶çš„æ•°å­—ã€‚å¦‚\130 X
+//\xdd ddè¡¨ç¤º2ä¸ª16è¿›åˆ¶æ•°å­—ã€‚ å¦‚\x30 0
 //int main()
 //{
-//	printf("%s\n", "(HoshimiFolder??)");//ÔçÆÚ±àÒëÆ÷½«??)½âÎöÎªÒ»¸ö×Ö·û£¬ÏÖ´ú±àÒëÆ÷½«Æä½âÎöÎªÁ½¸ö×Ö·û
-//	//ÔçÆÚ±àÒëÆ÷½«??)½âÎö[,Êä³öÎª(HosshimiFolder[
-//	printf("%s\n", "(HoshimiFolder\?\?)");//\?ÊÇ×ªÒå×Ö·û£¬±íÊ¾Ò»¸öÎÊºÅ(ÏÖ´ú±àÒëÆ÷¾ÍÃ»Õâ¸öÎÊÌâÁË£©
+//	printf("%s\n", "(HoshimiFolder??)");//æ—©æœŸç¼–è¯‘å™¨å°†??)è§£æžä¸ºä¸€ä¸ªå­—ç¬¦ï¼ŒçŽ°ä»£ç¼–è¯‘å™¨å°†å…¶è§£æžä¸ºä¸¤ä¸ªå­—ç¬¦
+//	//æ—©æœŸç¼–è¯‘å™¨å°†??)è§£æž[,è¾“å‡ºä¸º(HosshimiFolder[
+//	printf("%s\n", "(HoshimiFolder\?\?)");//\?æ˜¯è½¬ä¹‰å­—ç¬¦ï¼Œè¡¨ç¤ºä¸€ä¸ªé—®å·(çŽ°ä»£ç¼–è¯‘å™¨å°±æ²¡è¿™ä¸ªé—®é¢˜äº†ï¼‰
 //	return 0;
 //}
-//Èý×ÖÄ¸´Ê(ÔçÆÚ±àÒëÆ÷£©
+//ä¸‰å­—æ¯è¯(æ—©æœŸç¼–è¯‘å™¨ï¼‰
 //??)--> ]
 //??(--> [
 
-//%d ´òÓ¡ÕûÐÍ
-//%c ´òÓ¡×Ö·û
-//%s ´òÓ¡×Ö·û´®
-//%f ´òÓ¡¸¡µãÐÍ£¨Ð¡Êý£©/´òÓ¡floatÀàÐÍµÄÊý¾Ý
-//%lf ´òÓ¡doubleÀàÐÍµÄÊý¾Ý
+//%d æ‰“å°æ•´åž‹
+//%c æ‰“å°å­—ç¬¦
+//%s æ‰“å°å­—ç¬¦ä¸²
+//%f æ‰“å°æµ®ç‚¹åž‹ï¼ˆå°æ•°ï¼‰/æ‰“å°floatç±»åž‹çš„æ•°æ®
+//%lf æ‰“å°doubleç±»åž‹çš„æ•°æ®
 
 //int main()
 //{
-//	printf("%c\n", '\'');//\' ½«¡¯×ª±äÎª'µ¥ÒýºÅµÄÒâË¼£¬¶ø²»ÊÇ½«''¿´ÎªÒ»¶Ô£¬µ¼ÖÂºóÃæµÄ'Âäµ¥
-//	printf("abcd\n\0ef");//\0»á±ä³É×ªÒå×Ö·û
-//	printf("abcd\\0ef\n");//\\Ôò½«\×ª±äÎªµ¥´¿µÄ\,Ö®ºóµÄ\0²»»á±»µ±×÷×ªÒå×Ö·ûÁË
-//	printf("\test\.c\n");//\tÊÇÖÆ±í·û£¬±íÊ¾Ìøµ½ÏÂÒ»¸öÖÆ±íÎ»,´Ë´¦Êä³ö¾Í²»ÊÇ¡¢test\.cÁË,\t=tab
-//	printf("	est\.c\n");//ÓÃTab´úÌæ\t£¬Êä³ö½á¹ûÊÇ	est\.c
-//	printf("\\test\\.c\n");//\\½«\×ª±äÎªµ¥´¿µÄ\,²»»á±»µ±×÷×ªÒå×Ö·ûÁË
-//	printf("\a");//\aÊÇ¾¯¸æ×Ö·û£¬·äÃùÈÃµçÄÔ·¢³ö¾¯¸æÉùÒô
+//	printf("%c\n", '\'');//\' å°†â€™è½¬å˜ä¸º'å•å¼•å·çš„æ„æ€ï¼Œè€Œä¸æ˜¯å°†''çœ‹ä¸ºä¸€å¯¹ï¼Œå¯¼è‡´åŽé¢çš„'è½å•
+//	printf("abcd\n\0ef");//\0ä¼šå˜æˆè½¬ä¹‰å­—ç¬¦
+//	printf("abcd\\0ef\n");//\\åˆ™å°†\è½¬å˜ä¸ºå•çº¯çš„\,ä¹‹åŽçš„\0ä¸ä¼šè¢«å½“ä½œè½¬ä¹‰å­—ç¬¦äº†
+//	printf("\test\.c\n");//\tæ˜¯åˆ¶è¡¨ç¬¦ï¼Œè¡¨ç¤ºè·³åˆ°ä¸‹ä¸€ä¸ªåˆ¶è¡¨ä½,æ­¤å¤„è¾“å‡ºå°±ä¸æ˜¯ã€test\.cäº†,\t=tab
+//	printf("	est\.c\n");//ç”¨Tabä»£æ›¿\tï¼Œè¾“å‡ºç»“æžœæ˜¯	est\.c
+//	printf("\\test\\.c\n");//\\å°†\è½¬å˜ä¸ºå•çº¯çš„\,ä¸ä¼šè¢«å½“ä½œè½¬ä¹‰å­—ç¬¦äº†
+//	printf("\a");//\aæ˜¯è­¦å‘Šå­—ç¬¦ï¼Œèœ‚é¸£è®©ç”µè„‘å‘å‡ºè­¦å‘Šå£°éŸ³
 //	printf("Hoshimi\nFolder\n");
 //	return 0;
 //}
 //int main()
 //{
-//	printf("%c\n", '\130');//\130ÊÇ°Ë½øÖÆÊý£¬±íÊ¾×Ö·ûX
-//	printf("%c\n", '\x60');//\x60ÊÇÊ®Áù½øÖÆÊý£¬±íÊ¾×Ö·û`
+//	printf("%c\n", '\130');//\130æ˜¯å…«è¿›åˆ¶æ•°ï¼Œè¡¨ç¤ºå­—ç¬¦X
+//	printf("%c\n", '\x60');//\x60æ˜¯åå…­è¿›åˆ¶æ•°ï¼Œè¡¨ç¤ºå­—ç¬¦`
 //	printf("%c\n", '\x63');
 //	//0*16^0 + 6*16^1 = 0 + 96 = 96
-//	printf("%d\n", strlen("qwer t"));//¼ÆËã×Ö·û´®"qwer t"µÄ³¤¶È£¬½á¹ûÊÇ6£¨¿Õ¸ñÎªÒ»¸ö×Ö·û
-//	printf("%d\n", strlen("c:\test\628\test.c"));//¼ÆËã×Ö·û´®"c:\test\628\test.c"µÄ³¤¶È£¬\tÎª×ªÒå×Ö·û£¬\62ÎªÒ»¸ö×ªÒå×Ö·û,8²»ÊÇ8½øÖÆµÄ×Ö·û£¨°Ë½øÖÆ£º01234567£©
-//	//½á¹ûÎª14
+//	printf("%d\n", strlen("qwer t"));//è®¡ç®—å­—ç¬¦ä¸²"qwer t"çš„é•¿åº¦ï¼Œç»“æžœæ˜¯6ï¼ˆç©ºæ ¼ä¸ºä¸€ä¸ªå­—ç¬¦
+//	printf("%d\n", strlen("c:\test\628\test.c"));//è®¡ç®—å­—ç¬¦ä¸²"c:\test\628\test.c"çš„é•¿åº¦ï¼Œ\tä¸ºè½¬ä¹‰å­—ç¬¦ï¼Œ\62ä¸ºä¸€ä¸ªè½¬ä¹‰å­—ç¬¦,8ä¸æ˜¯8è¿›åˆ¶çš„å­—ç¬¦ï¼ˆå…«è¿›åˆ¶ï¼š01234567ï¼‰
+//	//ç»“æžœä¸º14
 //	return 0;
 //}
-//8½øÖÆµÄ130»»³É10½øÖÆÎª8^0*0 + 8^1*3 + 8^2*1 = 0 + 24 + 64 = 88
-//8½øÖÆµÄ130×ª»»Îª10½øÖÆµÄ88£¬ASCII±àÂë±íÖÐ88¶ÔÓ¦µÄ×Ö·ûÊÇX
-//¶Ôabcdef!@#$%^&*£¬Ã¿Ò»¸ö×Ö·û½øÐÐ±àºÅ(a-97£¬b-98),³ÉÎªASCII±àÂë±í
-//AµÄASCII±àÂëÊÇ65£¬BµÄASCII±àÂëÊÇ66£¬CµÄASCII±àÂëÊÇ67,aµÄASCII±àÂëÊÇ97£¬bµÄASCII±àÂëÊÇ98£¬cµÄASCII±àÂëÊÇ99,Óë´óÐ´×ÖÄ¸²îÎª32
+//8è¿›åˆ¶çš„130æ¢æˆ10è¿›åˆ¶ä¸º8^0*0 + 8^1*3 + 8^2*1 = 0 + 24 + 64 = 88
+//8è¿›åˆ¶çš„130è½¬æ¢ä¸º10è¿›åˆ¶çš„88ï¼ŒASCIIç¼–ç è¡¨ä¸­88å¯¹åº”çš„å­—ç¬¦æ˜¯X
+//å¯¹abcdef!@#$%^&*ï¼Œæ¯ä¸€ä¸ªå­—ç¬¦è¿›è¡Œç¼–å·(a-97ï¼Œb-98),æˆä¸ºASCIIç¼–ç è¡¨
+//Açš„ASCIIç¼–ç æ˜¯65ï¼ŒBçš„ASCIIç¼–ç æ˜¯66ï¼ŒCçš„ASCIIç¼–ç æ˜¯67,açš„ASCIIç¼–ç æ˜¯97ï¼Œbçš„ASCIIç¼–ç æ˜¯98ï¼Œcçš„ASCIIç¼–ç æ˜¯99,ä¸Žå¤§å†™å­—æ¯å·®ä¸º32
 
-//×¢ÊÍ
-//ÓÃÀ´½âÊÍ´úÂëµÄ×÷ÓÃ£¨ÓÃÀ´×ö±Ê¼ÇºÜÓÐÓÃ£©
+//æ³¨é‡Š
+//ç”¨æ¥è§£é‡Šä»£ç çš„ä½œç”¨ï¼ˆç”¨æ¥åšç¬”è®°å¾ˆæœ‰ç”¨ï¼‰
 //int main()
 //{
 //	//int a = 10;
-//	int* p = NULL; //´´½¨Ö¸Õë±äÁ¿p,²¢¸³ÖµÎªNULL
+//	int* p = NULL; //åˆ›å»ºæŒ‡é’ˆå˜é‡p,å¹¶èµ‹å€¼ä¸ºNULL
 //	return 0;
 //}
-//*CÓïÑÔ×¢ÊÍ
-/*Îª×¢ÊÍ¿ªÊ¼
-ÔÚÕâÖÐ¼ä½øÐÐ¸÷ÖÖ×¢ÊÍ£¬Ë­TMÏëÐ´´úÂë°¡£¡£¬Õâ¾ÍÊÇ×¢ÊÍ£¬ÕâÖÐ¼ä±àÒëÆ÷²»¹ÜÄã£¬Ëæ±ãÐ´É¶¶¼Ã»É¶ÎÊÌâ
-×îºóÁ½¸ö·ûºÅ´ú±í×¢ÊÍ½áÊø*/
-//CÓïÑÔµÄ×¢ÊÍÓÐÈ±ÏÝ£¬ÔÚ/*ºÍ*/Ö®¼ä²»ÄÜÔÚÓÃ/*ºÍ*/Ç¶Ì×£¬·ñÔò/*a/*b*/c*/ÖÐ£¬cÈÔÈ»²»»á±»ÆÁ±Îµô
+//*Cè¯­è¨€æ³¨é‡Š
+/*ä¸ºæ³¨é‡Šå¼€å§‹
+åœ¨è¿™ä¸­é—´è¿›è¡Œå„ç§æ³¨é‡Šï¼Œè°TMæƒ³å†™ä»£ç å•Šï¼ï¼Œè¿™å°±æ˜¯æ³¨é‡Šï¼Œè¿™ä¸­é—´ç¼–è¯‘å™¨ä¸ç®¡ä½ ï¼Œéšä¾¿å†™å•¥éƒ½æ²¡å•¥é—®é¢˜
+æœ€åŽä¸¤ä¸ªç¬¦å·ä»£è¡¨æ³¨é‡Šç»“æŸ*/
+//Cè¯­è¨€çš„æ³¨é‡Šæœ‰ç¼ºé™·ï¼Œåœ¨/*å’Œ*/ä¹‹é—´ä¸èƒ½åœ¨ç”¨/*å’Œ*/åµŒå¥—ï¼Œå¦åˆ™/*a/*b*/c*/ä¸­ï¼Œcä»ç„¶ä¸ä¼šè¢«å±è”½æŽ‰
 
-//C++µÄ×¢ÊÍ¾ÍÔÚÕâÀï
-//×¢ÊÍ¿ÉÒÔÊáÀí´úÂë£¬±ãÓÚÔÄ¶Á
-//¶Ô¸´ÔÓ´úÂë½øÐÐ½âÊÍ£¬±ãÓÚ°ëÄêºóÔÙÊáÀí
+//C++çš„æ³¨é‡Šå°±åœ¨è¿™é‡Œ
+//æ³¨é‡Šå¯ä»¥æ¢³ç†ä»£ç ï¼Œä¾¿äºŽé˜…è¯»
+//å¯¹å¤æ‚ä»£ç è¿›è¡Œè§£é‡Šï¼Œä¾¿äºŽåŠå¹´åŽå†æ¢³ç†
 
 //int main()
 //{
-//	//½ÓÊÜÊäÈë
+//	//æŽ¥å—è¾“å…¥
 //
-//	//´¦ÀíÊý¾Ý
+//	//å¤„ç†æ•°æ®
 //
-//	//Êä³ö
+//	//è¾“å‡º
 //	return 0;
 //}
 
-//Ñ¡ÔñÓï¾ä
+//é€‰æ‹©è¯­å¥
 //int main()
 //{
 //	int input = 0;
-//	printf("µ½ÁË´óËÄ\n");
-//	printf("¿ç×¨ÒµÂð(1/0)?");
+//	printf("åˆ°äº†å¤§å››\n");
+//	printf("è·¨ä¸“ä¸šå—(1/0)?");
 //	scanf("%d",&input);
 //	
 //	if (input == 1)
 //	{
-//		printf("¿çÈË¹¤ÖÇÄÜ\n");
+//		printf("è·¨äººå·¥æ™ºèƒ½\n");
 //	}
 //	else
 //	{
-//		printf("Ñ§²»½øÈ¥±¾×¨Òµ\n");
+//		printf("å­¦ä¸è¿›åŽ»æœ¬ä¸“ä¸š\n");
 //	}
 //	return 0;
 //}
-//Í¨¹ýif elseÊµÏÖÑ¡Ôñ
-//Í¨¹ýswitch...ÊµÏÖÑ¡Ôñ£¨ÔÝÇÒ²»±í£©
+//é€šè¿‡if elseå®žçŽ°é€‰æ‹©
+//é€šè¿‡switch...å®žçŽ°é€‰æ‹©ï¼ˆæš‚ä¸”ä¸è¡¨ï¼‰
 
-//Ñ­»·Óï¾ä
-//ÈýÖÖÃèÊöÑ­»·µÄ·½Ê½
-//whileÓï¾ä
-//forÓï¾ä£¨ÔÝÇÒ²»±í£©
-//do...whileÓï¾ä£¨ÔÝÇÒ²»±í£©
+//å¾ªçŽ¯è¯­å¥
+//ä¸‰ç§æè¿°å¾ªçŽ¯çš„æ–¹å¼
+//whileè¯­å¥
+//forè¯­å¥ï¼ˆæš‚ä¸”ä¸è¡¨ï¼‰
+//do...whileè¯­å¥ï¼ˆæš‚ä¸”ä¸è¡¨ï¼‰
 //int main()
 //{
 //	int line = 0;
-//	printf("Ñ§CÓïÑÔ\n");
+//	printf("å­¦Cè¯­è¨€\n");
 //
 //	while (line < 20000)
 //	{
-//		printf("Ð´´úÂë:%d\n", line);
+//		printf("å†™ä»£ç :%d\n", line);
 //		line++;
 //
 //		if (line >= 20000)
 //		{
-//			printf("È¥¿¼ÑÐ°É\n");
+//			printf("åŽ»è€ƒç ”å§\n");
 //		}
 //		else
 //		{
-//			printf("Äã¾ÍÑ§°É\n");
+//			printf("ä½ å°±å­¦å§\n");
 //		}
 //	}
 //	return 0;
 //}
 
-//CÓïÑÔÊÇ¡°½á¹¹»¯¡±µÄ³ÌÐòÉè¼ÆÓïÑÔ
-//-Ë³Ðò½á¹¹
-//-Ñ¡Ôñ½á¹¹
-//-Ñ­»·½á¹¹
+//Cè¯­è¨€æ˜¯â€œç»“æž„åŒ–â€çš„ç¨‹åºè®¾è®¡è¯­è¨€
+//-é¡ºåºç»“æž„
+//-é€‰æ‹©ç»“æž„
+//-å¾ªçŽ¯ç»“æž„
 
-//º¯Êý
-//Çó2¸öÈÎÒâÕûÊýµÄºÍ
-//int Add(int x, int y)//¶¨ÒåAdd£¬Îªº¯ÊýÃû£»x,yÎªº¯Êý²ÎÊý
+//å‡½æ•°
+//æ±‚2ä¸ªä»»æ„æ•´æ•°çš„å’Œ
+//int Add(int x, int y)//å®šä¹‰Addï¼Œä¸ºå‡½æ•°åï¼›x,yä¸ºå‡½æ•°å‚æ•°
 //{
-//	//int z = 0;//int Îª·µ»ØÀàÐÍ
+//	//int z = 0;//int ä¸ºè¿”å›žç±»åž‹
 //	//z = x + y;
-//	//return z;//ÉÏÊöÈýÐÐÎªº¯ÊýÌå
-//	//¼ò»¯ÉÏÊöº¯Êý
+//	//return z;//ä¸Šè¿°ä¸‰è¡Œä¸ºå‡½æ•°ä½“
+//	//ç®€åŒ–ä¸Šè¿°å‡½æ•°
 //	return (x + y);
 //}
 //int main()
 //{
 //	int n1 = 0;
 //	int n2 = 0;
-//	//ÊäÈë
+//	//è¾“å…¥
 //	scanf("%d %d",&n1,&n2);
-//	//ÇóºÍ
-//	//int sum = n1 + n2;//ÓÃ±í´ïÊ½¼ÆËã½á¹û
+//	//æ±‚å’Œ
+//	//int sum = n1 + n2;//ç”¨è¡¨è¾¾å¼è®¡ç®—ç»“æžœ
 //	int sum = Add(n1, n2);
 //	int t1 = 100;
 //	int t2 = 10;
-//	int ret=Add(t1, t2);//µ÷³öÉÏÊö´úÂë½øÐÐ¼ÆËã
-//	//´òÓ¡
+//	int ret=Add(t1, t2);//è°ƒå‡ºä¸Šè¿°ä»£ç è¿›è¡Œè®¡ç®—
+//	//æ‰“å°
 //	printf("%d %d",sum,ret);
 //	return 0;
 //}
 
-//Êý×é
-//Êý×é£ºÒ»×éÏàÍ¬ÀàÐÍÔªËØµÄ¼¯ºÏ
+//æ•°ç»„
+//æ•°ç»„ï¼šä¸€ç»„ç›¸åŒç±»åž‹å…ƒç´ çš„é›†åˆ
 int main()
 {
 	//int a=10
 	//int b=11
 	//int c=12
-	//´æ´¢0~9
-	int arr[10] = {0,1,2,3,4,5,6,7,8,9};//9±äÎª19Ò²Ã»ÎÊÌâ£¬Ö»ÒªÊÇ10¸öÕûÊý
-	//Êý×ÖÐòºÅ·Ö±ðÎª0£¬1£¬2£¬3£¬4£¬5£¬6£¬7£¬8£¬9£¬ÕâÐ©¾ÍÊÇÊý×éµÄÏÂ±ê
-	//¹æ¶¨ÏÂ±ê´Ó0¿ªÊ¼
-	//printf("%d\n", arr[8]);//·ÃÎÊµÄÊÇµÚ9¸öÔªËØ£¬Ò²¾ÍÊÇÊý×éÖÐµÄ¡°8¡±£»arr[0]·ÃÎÊµÄµÚ1¸öÔªËØ
+	//å­˜å‚¨0~9
+	int arr[10] = {0,1,2,3,4,5,6,7,8,9};//9å˜ä¸º19ä¹Ÿæ²¡é—®é¢˜ï¼Œåªè¦æ˜¯10ä¸ªæ•´æ•°
+	//æ•°å­—åºå·åˆ†åˆ«ä¸º0ï¼Œ1ï¼Œ2ï¼Œ3ï¼Œ4ï¼Œ5ï¼Œ6ï¼Œ7ï¼Œ8ï¼Œ9ï¼Œè¿™äº›å°±æ˜¯æ•°ç»„çš„ä¸‹æ ‡
+	//è§„å®šä¸‹æ ‡ä»Ž0å¼€å§‹
+	//printf("%d\n", arr[8]);//è®¿é—®çš„æ˜¯ç¬¬9ä¸ªå…ƒç´ ï¼Œä¹Ÿå°±æ˜¯æ•°ç»„ä¸­çš„â€œ8â€ï¼›arr[0]è®¿é—®çš„ç¬¬1ä¸ªå…ƒç´ 
 	int i = 0;
-	while (i < 10)//½èÖúwhileÑ­»·´òÓ¡Êý×éÖÐµÄÈ«²¿Êý×Ö
+	while (i < 10)//å€ŸåŠ©whileå¾ªçŽ¯æ‰“å°æ•°ç»„ä¸­çš„å…¨éƒ¨æ•°å­—
 	{
 		printf("%d\n", arr[i]);
 		i = i + 1;
